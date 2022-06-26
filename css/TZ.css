@@ -1,0 +1,39 @@
+/* стиль для таблицы */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 50%;
+}
+
+/* стиль для ячеек таблицы */
+th,
+td {
+	border: 1px solid #888;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	cursor: pointer;
+}
+
+/* подсветка ячейки при наведении курсором мыши */
+td:hover:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	border: 3px solid #b5ec9c;
+}
+
+/* выделение цветом ячейки, после её выбора */
+td.active:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	border: 3px solid rgb(103, 245, 74) !important;
+}
