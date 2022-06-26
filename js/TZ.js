@@ -38,6 +38,7 @@ function selectCell(row, column) {
 
 // при загрузке страницы выбор ячейки
 function randomChoice(rows = 6, columns = 6) {
+
     var cellsCount = rows * columns;
 
     var rndCellNumber = Math.floor(Math.random() * cellsCount);
