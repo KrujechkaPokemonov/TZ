@@ -37,3 +37,8 @@ td.active:after {
 	left: 0px;
 	border: 3px solid rgb(103, 245, 74) !important;
 }
+
+/* окрашивание ячейки */
+td[selected] {
+	background-color: green;
+}

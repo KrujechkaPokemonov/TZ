@@ -25,3 +25,26 @@ for (const row of tableData.rows) {
     row.forEach(val => tr.insertCell().textContent = val);
 }
 document.body.appendChild(tBody.parentElement);
+
+// выделение ячейки цветом по номеру строки и столбца
+function selectCell(row, column) {
+    var currentSelection = document.querySelector('td[selected]'); //находим текущую выделенную ячейку
+    if (currentSelection) currentSelection.removeAttribute('selected'); //если найдена, то снимаем выделение
+
+    var newSelection = document.querySelector('table').rows[row].cells[column - 1]; // находим строку и столбец
+    newSelection.setAttribute('selected', true); //устанавливаем атрибут selected, который затем будем использовать в css для раскраски
+}
+
+
+// при загрузке страницы выбор ячейки
+function randomChoice(rows = 6, columns = 6) {
+    var cellsCount = rows * columns;
+
+    var rndCellNumber = Math.floor(Math.random() * cellsCount);
+    var row = Math.floor(rndCellNumber / columns) + 1;
+    var column = (rndCellNumber % columns) + 1;
+
+    selectCell(row, column);
+}
+
+randomChoice();
