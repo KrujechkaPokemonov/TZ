@@ -21,19 +21,18 @@
 
   <!-- Вывод тайммера -->
   <div id="app"></div>
+
   <!-- Подключение файла с JSON данными -->
   <script src="js/TZ.js"></script>
 
   <!-- Выделение ячейки -->
-
   <script>
-    $(document).ready(function () {
-      $('th, td').click(function () {
-        $('td').removeClass('active');
-        $(this).addClass('active');
-      });
+    $("td").click(function () {
+      $(this).addClass("active");
     });
   </script>
+
+
 </body>
 
 </html>
