@@ -1,117 +1,106 @@
 body {
-  font-family: sans-serif;
-  display: grid;
-  height: 100vh;
-  place-items: center;
-}
-
-/* Устанавливаем высоту и ширину контейнера */
-.base-timer {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
-
-.base-timer__svg {
-  transform: scaleX(-1);
-}
-
-/* Удаляем стили SVG, чтобы было видно время */
-.base-timer__circle {
-  fill: none;
-  stroke: none;
-}
-
-/* Контур SVG, который отображает прогресс времени */
-.base-timer__path-elapsed {
-  stroke-width: 7px;
-  stroke: grey;
-}
-
-/* Контур, для изменения цвета при уменьшении вреиени */
-.base-timer__path-remaining {
-  stroke-width: 7px;
-  stroke-linecap: round;
-  transform: rotate(90deg);
-  transform-origin: center;
-  transition: 1s linear all;
-  fill-rule: nonzero;
-  stroke: currentColor;
-}
-
+    font-family: sans-serif;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+  }
+  /* Устанавливаем высоту и ширину контейнера */
+  .base-timer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  /* Удаляем стили SVG, чтобы было видно время */
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  /* Контур SVG, который отображает прогресс времени */
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+  }
+  /* Контур, для изменения цвета при уменьшении вреиени */
+  .base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+  }
 /* Cтили для изменения цвета круга */
-.base-timer__path-remaining.green {
-  color: rgb(65, 184, 131);
-}
+  .base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+  }
+  
+  .base-timer__path-remaining.orange {
+    color: orange;
+  }
+  
+  .base-timer__path-remaining.red {
+    color: red;
+  }
+  /* Стили для текста внутри круга */
+  .base-timer__label {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
 
-.base-timer__path-remaining.orange {
-  color: orange;
-}
-
-.base-timer__path-remaining.red {
-  color: red;
-}
-
-/* Стили для текста внутри круга */
-.base-timer__label {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-
-}
-
-/* стиль таблицы */
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 50%;
-}
-
-/* стиль для ячеек таблицы */
-th,
-td {
-  border: 1px solid #888;
-  padding: 10px;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  cursor: pointer;
-}
-
-/* скрывает шапку таблицы */
-th {
-  display: none;
-}
-
-/* подсветка ячейки при наведении курсором мыши */
-td:hover:after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  border: 3px solid #b5ec9c;
-}
-
-/* выделение цветом ячейки, после её выбора */
-td.active:after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  border: 3px solid rgb(103, 245, 74) !important;
-}
-
-/* окрашивание ячейки */
-td[selected] {
-  background-color: green;
-}
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50%;
+  }
+  
+  th {
+    display: none;
+  }
+  /* стиль для ячеек таблицы */
+ 
+  td {
+    border: 1px solid #888;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* подсветка ячейки при наведении курсором мыши */
+  td:hover:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border: 3px solid #b5ec9c;
+  }
+  
+  /* выделение цветом ячейки, после её выбора */
+  td.active:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border: 3px solid rgb(103, 245, 74) !important;
+  }
+  
+  /* окрашивание ячейки */
+  td[selected] {
+    background-color: green;
+  }
